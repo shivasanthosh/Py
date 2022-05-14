@@ -6,7 +6,7 @@ def generateMatrix(n):
     num = 1
     k = 1
 
-    while k <= n*n:
+    while k <= n * n:
         matrix[row][col] = k
         k += 1
         if dirr == 0:
@@ -37,11 +37,19 @@ def generateMatrix(n):
     return matrix
 
 
+def isPalindrome(A):
+    string = A
+    if string == string[:: -1]:
+        return True
+    return False
 
 
 
 
+A = [[3, 0, 0, 0]
+     [7, 4, 0, 0]
+     [2, 4, 6, 0]
+     [8, 5, 9, 3]
+     ]
 
-print(generateMatrix(6))
-
-
+print(GetSumOfMax(A))
