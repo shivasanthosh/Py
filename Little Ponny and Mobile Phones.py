@@ -10,8 +10,8 @@ def presum(A):
         result[i] = result[i-1]+A[i]
 
     return result
-
-
+#hello
+#test
 def binarySearch(arr,find):
     min = 0
     max = len(arr) - 1
