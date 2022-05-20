@@ -16,17 +16,40 @@ def binarySearch(arr,find):
     min = 0
     max = len(arr) - 1
     while min <= max:
-        mid = min+(max-min)//2
+        mid = min + (max - min) // 2
 
-        if (arr[mid] == find or arr[mid-1]<=find):
+
+
+        if (arr[mid] == find):
             return mid
-        elif arr[mid]<find:
-            min=mid+1
+        elif arr[mid] < find:
+            min = mid + 1
         else:
-            max= mid-1
+            max = mid - 1
     return -1
 
 
+def SecondlargestIndex(arr, find):
+    min = 0
+    max = len(arr) - 1
+    while min <= max:
+        mid = min + (max - min) // 2
+
+        if (arr[mid-1] < find):
+            return mid-1
+        elif arr[mid] < find:
+            min = mid + 1
+        else:
+            max = mid - 1
+    return -1
+
 print(presum(A))
 
-print(binarySearch(presum(A),18))
+x = binarySearch(presum(A),18)
+if x != -1 :
+    print(x)
+else:
+    print(SecondlargestIndex(presum(A),18))
+
+
+
