@@ -2,7 +2,7 @@ blue_count=20
 red_count=14
 ls=[]
 
-for i in range(14):
+for i in range(13):
     ls.append("Red")
 
 for i in range(20):
@@ -15,7 +15,7 @@ import random
 
 def solve(ls):
     n=len(ls)
-    while(n>0):
+    while(n>-9):
         if (random.choice(ls)=='Blue' and random.choice(ls)=="Blue"):
             ls.pop(ls.index("Blue"))
             ls.pop(ls.index("Blue"))

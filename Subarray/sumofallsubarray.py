@@ -34,12 +34,15 @@ A = [-120, -202, -293, -60, -261, -67, 10, 82, -334, -393, -428, -182, -138, -16
      -150, -37, -493, -284, -107, 93, -183, -60, -261, -310, -380]
 
 A = [ -500 ]
+
+A = [1, 2, 3, 4, 5]
 def maxSubArray(A):
     arrSize = len(A)
     maxof = -math.inf
     # check all the elements are same
     firsele = A[0]
     flagCount = 0
+    sum0fall=0
 
     pSum = preSum(A)
 
@@ -58,8 +61,9 @@ def maxSubArray(A):
             else:
                 sum = pSum[j] - pSum[i - 1]
             maxof = max(sum, maxof)
+            sum0fall+=sum
 
-    return maxof
+    return sum0fall
 
 
 def preSum(A):
@@ -67,7 +71,7 @@ def preSum(A):
     preSum = [0 for _ in range(arr_size)]
     preSum[0] = A[0]
     for i in range(arr_size):
-        preSum[i] = A[i] + preSum[i - 1]
+        preSum[i] = A[i] ^ preSum[i - 1]
     return preSum
 
 
